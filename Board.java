@@ -1,9 +1,35 @@
 public class Board {
     private int occupied;
     private final int[][] loc;
+    // To make operation of finding the winner O(1) time, these are added. 
+    private int[] rowSum;
+    private int[] colSum;
+    private int diagSum;
+    private int revDiagSum;
+
     public Board(int n) {
         this.occupied = 0;          // board is empty initially
         this.loc = new int[n][n];
+        this.rowSum = new int[n];
+        this.colSum = new int[n];
+        this.diagSum = 0;
+        this.revDiagSum = 0;
+    }
+
+    public int getRowSum(int r) {
+        return rowSum[r];
+    }
+
+    public int getColSum(int r) {
+        return colSum[r];
+    }
+
+    public int getDiagSum(int r) {
+        return diagSum;
+    }
+    
+    public int getRevDiagSum(int r) {
+        return revDiagSum;
     }
 
     public boolean filled() {
