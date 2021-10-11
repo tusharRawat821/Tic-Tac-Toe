@@ -1,5 +1,5 @@
 # Tic-Tac-Toe Game.
 
-# This is 2-Player (PC vs Player) Tic-Tac-Toe Game project.
+### This is PC vs Player Tic-Tac-Toe game project.
 
 
