@@ -1,35 +1,18 @@
+/** */
 public class Board {
     private int occupied;
     private final int[][] loc;
-    // To make operation of finding the winner O(1) time, these are added. 
-    private int[] rowSum;
-    private int[] colSum;
-    private int diagSum;
-    private int revDiagSum;
+    private final int size;
+
 
     public Board(int n) {
         this.occupied = 0;          // board is empty initially
+        this.size = n;
         this.loc = new int[n][n];
-        this.rowSum = new int[n];
-        this.colSum = new int[n];
-        this.diagSum = 0;
-        this.revDiagSum = 0;
     }
 
-    public int getRowSum(int r) {
-        return rowSum[r];
-    }
-
-    public int getColSum(int r) {
-        return colSum[r];
-    }
-
-    public int getDiagSum(int r) {
-        return diagSum;
-    }
-    
-    public int getRevDiagSum(int r) {
-        return revDiagSum;
+    public int getSize() {
+        return size;
     }
 
     public boolean filled() {
@@ -50,14 +33,20 @@ public class Board {
 
     public void show() {
         int n = loc.length;
+
+        System.out.print("\n\n--------- Game Board ---------\n\n");
+
         for(int i = 0; i < n; i++) {
-            System.out.print("|");
+            System.out.print("      |");
             for(int j = 0; j < n; j++) {
                 String val = (loc[i][j] == 0 ? "_" : (loc[i][j] == 1 ? "X" : "O")); 
                 System.out.print(" " + val + " |");
             }
-            System.out.println();
+            System.out.print("\n\n");
         }
+
+        System.out.print("\n--------- Game Board ---------\n\n");
+
     }
 
 }

@@ -4,17 +4,12 @@
  */
 public class OXGame {
     public static void main(String[] args) {
-        System.out.println("Game Starts...");
+        System.out.println("Game Starts...\n\n");
 
-        // TODO:
-        // TicTacToe.play();
+        // TODO: not yet working as expected
+        TicTacToe.play();
 
-        // Board board = new Board(5);
-        // board.set(0, 1, 1);
-        // board.set(2, 2, -1);
-        // board.show();
-
-        System.out.println("Game Ends.....");
+        System.out.println("\n\nGame Ends.....");
     }
 
 }
