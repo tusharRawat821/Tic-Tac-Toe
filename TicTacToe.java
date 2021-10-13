@@ -69,22 +69,9 @@ public class TicTacToe {
                 // decide optimal move for computer using min-max algo.
                 move = ticTacToe.computersMove();
             }
-
+            
             // play 'move' on board.
             ticTacToe.playMove(move);
-
-            // debuggin statements ----
-            for(int i = 0; i < n; i++) {
-                System.out.print (ticTacToe.rowSum[i] + " | "); 
-            }
-            System.out.println();
-            for(int i = 0; i < n; i++) {
-                System.out.print(ticTacToe.colSum[i] + " | ");
-            }
-            System.out.println();
-            System.out.println(ticTacToe.diagSum);
-            System.out.println(ticTacToe.revDiagSum);
-            // ---------------
 
             // switch turn
             ticTacToe.turn = (ticTacToe.turn == 1 ? -1 : 1);
