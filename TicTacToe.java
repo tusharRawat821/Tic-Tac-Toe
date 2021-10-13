@@ -107,7 +107,8 @@ public class TicTacToe {
     }
 
     private int[] computersMove() {
-        // TODO: 
+
+        // TODO: alpha-beta optimization.
         // int alpha = Integer.MIN_VALUE;
         // int beta = Integer.MAX_VALUE;
 
@@ -126,6 +127,9 @@ public class TicTacToe {
      */
     private int[] minMax(int player, final int n) {
         // At max level --> human's turn | At min level --> Computer's turn
+        // System.out.println("------computer deciding ---- ");
+        // board.show();
+        // System.out.println("------computer deciding ---- ");
 
         int best[] = null;
         if(player == MIN) {
@@ -169,7 +173,7 @@ public class TicTacToe {
                 }
             }
         }
-
+        
         // return the optimal move(with score) player(=computer/human) can play by making a move.
         return best;
     }
@@ -183,7 +187,7 @@ public class TicTacToe {
             diagSum += player;
         if(i + j == n - 1)
             revDiagSum += player;
-        if(rowSum[i] == Math.abs(n) || colSum[j] == Math.abs(n) || diagSum == Math.abs(n) || revDiagSum == Math.abs(n)) {
+        if(Math.abs(rowSum[i]) == n || Math.abs(colSum[j]) == n || Math.abs(diagSum) == n || Math.abs(revDiagSum) == n) {
             return player;
         }
         return 0;
@@ -237,8 +241,9 @@ public class TicTacToe {
         if(x + y == n - 1)
             revDiagSum += play;
         
+
         // if this is a win move. Decide winner and return.
-        if(rowSum[x] == Math.abs(n) || colSum[y] == Math.abs(n) || diagSum == Math.abs(n) || revDiagSum == Math.abs(n)) {
+        if(Math.abs(rowSum[x]) == n || Math.abs(colSum[x]) == n || Math.abs(diagSum) == n || Math.abs(revDiagSum) == n) {
             winner = play; 
         }
         return winner;
