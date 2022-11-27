@@ -230,7 +230,7 @@ public class TicTacToe {
         
 
         // if this is a win move. Decide winner and return.
-        if(Math.abs(rowSum[x]) == n || Math.abs(colSum[x]) == n || Math.abs(diagSum) == n || Math.abs(revDiagSum) == n) {
+        if(Math.abs(rowSum[x]) == n || Math.abs(colSum[y]) == n || Math.abs(diagSum) == n || Math.abs(revDiagSum) == n) {
             winner = play; 
         }
         return winner;
